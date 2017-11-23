@@ -21,7 +21,21 @@ def generate_password():
 	'''
 	User.generate_password()
 
-+def verify_user(first_name,password):
+    def create_credential(site_name,user_name,password):
+	'''
+	Function to create a new credential
+	'''
+	new_credential=Credential(site_name,user_name,password)
+	return new_credential
+
+    def save_credential(credential):
+	'''
+	Function to save a newly created credential
+	'''
+	Credential.save_credentials(credential)
+
+
+def verify_user(first_name,password):
 	'''
 	Function that verifies the existance of the user before creating credentials
 	'''
