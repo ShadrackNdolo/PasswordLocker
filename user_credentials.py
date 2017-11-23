@@ -1,8 +1,9 @@
-  import pyperclip
+ import pyperclip
+ +import random
+ +import string
   
-    # Global Variables
- global users_list 
-  class User:
+  # Global Variables
+  global users_list
   	'''
   	Class to create user credentials, accounts and save their information
   	'''
@@ -48,7 +49,15 @@ class Credential:
         Credential.credentials_list.append(self)
 
         return cls.credentials_list
-g9i		
+
+    	def generate_password(self,size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+    		'''
+		Function to generate an 8 character password for a credential
+		'''
+		gen_pass=''.join(random.choice(char) for _ in range(size))
+ 		self.password = gen_pass
+		return self.password
+
 	@classmethod
 	def find_by_site_name(cls, site_name):
 		'''
@@ -59,9 +68,10 @@ g9i
 				return credential
 
             @classmethod
- +	def copy_credential(cls,site_name):
- +		'''
- +		Class method that copies a credential's info after the credential's site name is entered
- +		'''
- +		find_credential = cls.find_by_site_name(site_name)
+	def copy_credential(cls,site_name):
+		'''
+		Class method that copies a credential's info after the credential's site name is entered
+		'''
+ 		find_credential = cls.find_by_site_name(site_name)
+
  +		pyperclip.copy(f'Site Name: {find_credential.site_name} - UserName: {find_credential.site_name} - Password:  {find_credential.password}')
