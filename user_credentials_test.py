@@ -30,5 +30,22 @@ class TestCredentials(unittest.TestCase):
 		'''
  		self.new_account = Credential('Soundcloud','Shaw','pswd100')
 
+
+	def test__init__(self):
+		'''
+		Test to if check the initialization/creation of credential instances is properly done
+		'''		self.assertEqual(self.new_account.site_name,'Soundcloud')
+		self.assertEqual(self.new_account.account_name,'Shaw')
+		self.assertEqual(self.new_account.password,'pswd100')
+
+	def test_save_credential(self):
+		'''
+		Test to check if the new users info is saved into the users list
+		'''
+		self.new_user.save_account()
+		self.twitter = Credential('Soundcloud','Shaw','pswd100')
+        		self.twitter.save_account()
+                		self.assertEqual(len(Credential.credentials_list),2)
+
   if __name__ == '__main__':
   	unittest.main(verbosity=2) 
