@@ -47,6 +47,13 @@ class TestCredentials(unittest.TestCase):
 		self.twitter = Credential('Soundcloud','Shaw','pswd100')
         self.twitter.save_credentials()
         self.assertEqual(len(Credential.credentials_list),2)
+
+        def tearDown(self):
+ +		'''
+ +		Function to clear the credentials list after every test
+ +		'''
+ +		Credential.credentials_list = []
+
     @classmethod
 	def display_credentials(cls):
 		'''
