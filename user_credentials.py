@@ -40,6 +40,15 @@ class Credential:
 		self.account_name = account_name
 		self.password = password
 
+@classmethod
+	def check_user(cls,first_name,password):
+		'''
+		Method that checks if the name and password entered match entries in the users_list
+		'''
+		for user in cls.users_list:
+			if password = user.password:
+				return True
+			return False
 
 	def save_credentials(self):
 		'''
