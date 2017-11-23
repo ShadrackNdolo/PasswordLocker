@@ -49,10 +49,18 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credential.credentials_list),2)
 
         def tearDown(self):
- +		'''
- +		Function to clear the credentials list after every test
- +		'''
- +		Credential.credentials_list = []
+		'''
+		Function to clear the credentials list after every test
+		'''
+		Credential.credentials_list = []
+
+        +	def test_copy_credential(self):
+		'''
+		Test to check if the copy a credential method copies the correct credential
+		'''
+		self.new_credential.save_credentials()
+		Credential.copy_credential(new_credential.site_name)
+		self.assertEqual(self.new_credential,pyperclip.paste())
 
     @classmethod
 	def display_credentials(cls):
@@ -60,6 +68,7 @@ class TestCredentials(unittest.TestCase):
 		Class method to display the list of credentials saved
 		'''
 		return cls.credentials_list	
+
 
   if __name__ == '__main__':
   	unittest.main(verbosity=2) 
