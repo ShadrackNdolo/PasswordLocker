@@ -47,6 +47,12 @@ class TestCredentials(unittest.TestCase):
 		self.twitter = Credential('Soundcloud','Shaw','pswd100')
         self.twitter.save_credentials()
         self.assertEqual(len(Credential.credentials_list),2)
+    @classmethod
+	def display_credentials(cls):
+		'''
+		Class method to display the list of credentials saved
+		'''
+		return cls.credentials_list	
 
   if __name__ == '__main__':
   	unittest.main(verbosity=2) 
