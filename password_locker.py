@@ -41,9 +41,10 @@ def main():
 		elif short_code == 'ca':
 			print('To create a new account')
 			print("-"*60)
-			first_name = input('Enter your first name: ')
-			last_name = input('Enter your last name: ')
-			password = input('Enter your password: ')
+            print('To create a new account')
+			first_name = input('Enter your first name: ').strip()
+			last_name = input('Enter your last name: ').strip()
+			password = input('Enter your password: ').strip()
 			save_user(create_user(first_name,last_name,password))
 			print("-"*60)
 			print(f'New Account Created for: {first_name} {last_name} using password: {password}')
