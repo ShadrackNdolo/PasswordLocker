@@ -41,7 +41,7 @@ class TestCredentials(unittest.TestCase):
 
 	def test_save_credentials(self):
 		'''
-		Test to check if the new users info is saved into the users list
+		Test to check if the new credential info is saved into the credentials list
 		'''
 		self.new_credential.save_credentials()
 		self.twitter = Credential('Soundcloud','Shaw','pswd100')
