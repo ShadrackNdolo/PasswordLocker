@@ -1,7 +1,9 @@
-import pyperclip
- class User():
-	'''
-	Class to create user accounts and save their information
+ import pyperclip
+  
+ +users_list = []
+  class User:
+  	'''
+  	Class to create user accounts and save their information
 	'''
  	def __init__(self,first_name,second_name,password):
  		'''
