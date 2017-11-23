@@ -41,10 +41,10 @@ def main():
 		elif short_code == 'ca':
 			print('To create a new account')
 			print("-"*60)
-            print('To create a new account')
-			first_name = input('Enter your first name: ').strip()
-			last_name = input('Enter your last name: ').strip()
-			password = input('Enter your password: ').strip()
+            print('To create a new account')            
+            print('Enter your account details:')
+			first_name = input('Enter your first name - ').strip()
+			password = input('Enter your password - ').strip()
 			save_user(create_user(first_name,last_name,password))
 			print("-"*60)
 			print(f'New Account Created for: {first_name} {last_name} using password: {password}')
@@ -57,8 +57,24 @@ def main():
 			# if psw_choice == 'ep':
 			# 	password = input('Enter your password: ')
 
-
-
+elif short_code == 'cc':
+						print('Enter your credential details:')
+						site_name = input('Enter the site\'s name- ').strip()
+						user_name = input('Enter your username - ').strip()
+						while True:
+							print(' ')
+							print('Please choose an option for entering a password: ep-enter existing password, gp-generate a password, ex-exit')
+							psw_choice = input('Enter an option: ').lower().strip()
+							if psw_choice == 'ep':
+								password = input('Enter your password: ').strip()
+								break
+							elif psw_choice == 'gp':
+								password = generate_password()
+								break
+							elif psw_choice == 'ex':
+								break
+							else:
+								print('Oops! Wrong option entered.')
 
  
  
