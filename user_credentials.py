@@ -1,12 +1,13 @@
   import pyperclip
   
- # Global Variables
+    # Global Variables
  global users_list 
   class User:
   	'''
-  	Class to create user accounts and save their information
+  	Class to create user credentials, accounts and save their information
   	'''
       	# Class Variables
+    credentials_list =[]
 	users_list =[]
   	def __init__(self,first_name,last_name,password):
   		'''
