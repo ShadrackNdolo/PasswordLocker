@@ -37,8 +37,7 @@ As a user I would like:
 Locker
 
 ## Contributors
-This was an independent project. For any corrections or improvement kindly contact me on gmail.(shadrack.winters@outlook.com)
-
+This was an independent project. For any corrections or improvement kindly contact me on slack.
 ## Running the Application
 * To run the application, in your terminal:
 
