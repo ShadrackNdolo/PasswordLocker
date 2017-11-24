@@ -13,7 +13,11 @@ class TestUser(unittest.TestCase):
 		'''
 		Function to create a user account before each test
 		'''
+<<<<<<< HEAD
 		self.new_user = User('Mary','Ng\'ang\'a','pswd100')
+=======
+		self.new_user = User('Shaw','pswd100')
+>>>>>>> 1a95fd851b8508663a50eb050655aa009c9c68ff
 
 	def test__init__(self):
 		'''
@@ -97,9 +101,15 @@ class TestCredentials(unittest.TestCase):
 		Test to check if the display_credentials method, displays the correct credentials.
 		'''
 		self.new_credential.save_credentials()
+<<<<<<< HEAD
 		twitter = Credential('Jane','Twitter','maryjoe','pswd100')
 		twitter.save_credentials()
 		gmail = Credential('Jane','Gmail','maryjoe','pswd200')
+=======
+		twitter = Credential('Jane','Twitter','Shaw','pswd100')
+		twitter.save_credentials()
+		gmail = Credential('Jane','Gmail','Shaw','pswd200')
+>>>>>>> 1a95fd851b8508663a50eb050655aa009c9c68ff
 		gmail.save_credentials()
 		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
 
